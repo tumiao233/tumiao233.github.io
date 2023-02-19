@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-language" content="en">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+<title>掌握PHP “Hello World” 的输出（二） | Tim0&#39;Blog</title>
+<meta name="author" content="Tim0">
+<meta name="copyright" content="Tim0">
+
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+
+
+<meta name="description" content="[内容均引自菜鸟教程](PHP 教程 | 菜鸟教程 (runoob.com)) PHP表单和用户输入PHP 中的 $_GET 和 $_POST 变量用于检索表单中的信息，比如用户输入。 $_GET 变量预定义的 $_GET 变量用于收集来自 method&#x3D;”get” 的表单中的值。 从带有 GET 方法的表单发送的信息，对任何人都是可见的（会显示在浏览器的地址栏），并且对发送信息的量也">
+<meta property="og:type" content="article">
+<meta property="og:title" content="掌握PHP “Hello World” 的输出（二）">
+<meta property="og:url" content="https://tumiao233.github.io/2023/02/19/PHP2/">
+<meta property="og:site_name" content="Tim0&#39;Blog">
+<meta property="og:description" content="[内容均引自菜鸟教程](PHP 教程 | 菜鸟教程 (runoob.com)) PHP表单和用户输入PHP 中的 $_GET 和 $_POST 变量用于检索表单中的信息，比如用户输入。 $_GET 变量预定义的 $_GET 变量用于收集来自 method&#x3D;”get” 的表单中的值。 从带有 GET 方法的表单发送的信息，对任何人都是可见的（会显示在浏览器的地址栏），并且对发送信息的量也">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tumiao233.github.io/img/Tim0.png">
+<meta property="article:published_time" content="2023-02-19T12:01:53.483Z">
+<meta property="article:modified_time" content="2022-04-05T08:14:13.377Z">
+<meta property="article:author" content="Tim0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tumiao233.github.io/img/Tim0.png">
+
+
+<link href="/third-party/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<script src="/js/utlis.js"></script>
+<script>
+  (function() {
+    var html = mengd.$query('html')
+    var isDark = localStorage.isDark === 'true'
+    if (isDark) html.setAttribute('theme', 'dark')
+    else html.removeAttribute('theme')
+  })()
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+     
+    
+
+<script>
+  var $config = {
+      CDN: {
+        fancyboxJs: "/third-party/js/fancybox.js",
+        fancyboxCss: "/third-party/css/fancybox.css"
+      },
+      
+      
+      codeBlockExpand: {
+        enable: true,
+        height: 400,
+        scrollTop: 200
+      }
+      
+    }
+</script>
+
+    
+
+
+    <div id="body-wrap">
+        
+<nav id="nav-wrap">
+  <div class="navbar">
+    <div class="bar">
+      <a href="/" class="title">Tim0'Blog</a>
+      
+      <ul class="menu">
+         
+         
+        
+          
+            <li><a href="/">首页</a></li>
+           
+         
+        
+          
+          <li>
+            <a class="menu-child-hover" href="javascript:void(0);">找文章</a>
+            <ul class="menu-child">
+              
+              <li><a href='/tags'>标签</a></li>
+              
+              <li><a href='/categories'>分类</a></li>
+              
+              <li><a href='/archives'>归档</a></li>
+              
+            </ul>
+          </li>
+           
+         
+        
+          
+            <li><a href="/link">友情链接</a></li>
+           
+         
+        
+          
+            <li><a href="/about">关于我</a></li>
+           
+        
+      </ul>
+      <i class="fas fa-bars open-nav"></i>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <ul>
+       
+         
+        
+        
+          <li><a href="/">首页</a></li>
+        
+       
+        
+         
+          <li><a href='/tags'>标签</a></li>
+        
+          <li><a href='/categories'>分类</a></li>
+        
+          <li><a href='/archives'>归档</a></li>
+         
+       
+        
+        
+          <li><a href="/link">友情链接</a></li>
+        
+       
+        
+        
+          <li><a href="/about">关于我</a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+
+        <header id="header">
+    <div class="header-author">
+        <a href="/" class="author">
+            <img src="/img/load.gif" data-src="/img/Tim0.png" alt="Tim0" class="author-avatar">
+            <div class="author-name">
+                Tim0
+            </div>
+        </a>
+    </div>
+    <div class="header-description">
+        <p>
+            Be modest，be thirsty！
+        </p>
+        <div class="header-icon">
+            
+            
+                <a target="_blank" rel="noopener" href="https://github.com/tumiao233"><i class="fab fa-github"></i></a>
+            
+                <a href="mailto:tumiao@bupt.edu.cn"><i class="fa fa-envelope"></i></a>
+            
+        </div>
+    </div>
+</header>
+        <main id="main">
+            <article id="post">
+  <div class="post-info">
+    <div class="post-title">
+      <h1>掌握PHP “Hello World” 的输出（二）</h1>
+    </div>
+    <div class="post-meta">
+      <div class="post-date">
+        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">
+          Created
+          2023-02-19 |
+        </span>
+
+        <i class="fas fa-history fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">
+          Updated
+          2022-04-05
+        </span>
+      </div>
+      <div class="post-meta-wordcount">
+        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">Word Count:</span>
+        <span class="word-count">2.9k | </span>
+        <i class="far fa-clock fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">Reading time:</span>
+        <span>11min</span>
+        
+    | <i class="far fa-eye fa-fw post-meta-icon"></i>
+    
+        <span class="post-meta-label">Visitors:</span>
+        <span id="Discuss-Visitors">0</span>
+    
+
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="post-content">
+    <hr>
+<p>[内容均引自菜鸟教程](<a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-tutorial.html">PHP 教程 | 菜鸟教程 (runoob.com)</a>)</p>
+<h2 id="PHP表单和用户输入"><a href="#PHP表单和用户输入" class="headerlink" title="PHP表单和用户输入"></a>PHP表单和用户输入</h2><p>PHP 中的 $_GET 和 $_POST 变量用于检索表单中的信息，比如用户输入。</p>
+<h2 id="GET-变量"><a href="#GET-变量" class="headerlink" title="$_GET 变量"></a><strong>$_GET 变量</strong></h2><p>预定义的 $_GET 变量用于收集来自 method&#x3D;”get” 的表单中的值。</p>
+<p>从带有 GET 方法的表单发送的信息，对任何人都是可见的（会显示在浏览器的地址栏），并且对发送信息的量也有限制。</p>
+<p><strong>表单域的名称会自动成为 $_GET 数组中的键</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//form.html 文件代码如下：</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;form action=&quot;welcome.php&quot; method=&quot;get&quot;&gt;</span><br><span class="line">名字: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;</span><br><span class="line">年龄: &lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当用户点击 “Submit” 按钮时，发送到服务器的 URL 如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.runoob.com/welcome.php?fname=Runoob&amp;age=3</span><br></pre></td></tr></table></figure>
+
+<p>“welcome.php” 文件现在可以通过 $_GET 变量来收集表单数据了（请注意，表单域的名称会自动成为 $_GET 数组中的<strong>键</strong>）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">欢迎 &lt;?php echo $_GET[&quot;fname&quot;]; ?&gt;!&lt;br&gt;</span><br><span class="line">你的年龄是 &lt;?php echo $_GET[&quot;age&quot;]; ?&gt;  岁。</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>何时使用 method&#x3D;”get”？</strong></p>
+<p>在 HTML 表单中使用 method&#x3D;”get” 时，所有的变量名和值都会显示在 URL 中。</p>
+<p><strong>注释：</strong>所以在发送密码或其他敏感信息时，不应该使用这个方法！</p>
+<p>然而，正因为变量显示在 URL 中，因此可以在收藏夹中收藏该页面。在某些情况下，这是很有用的。</p>
+<p><strong>注释：</strong>HTTP GET 方法不适合大型的变量值。它的值是不能超过 2000 个字符的。</p>
+<h2 id="POST-变量"><a href="#POST-变量" class="headerlink" title="$_POST 变量"></a><strong>$_POST 变量</strong></h2><p>预定义的 $_POST 变量用于收集来自 method&#x3D;”post” 的表单中的值。</p>
+<p>从带有 POST 方法的表单发送的信息，对任何人都是不可见的（不会显示在浏览器的地址栏），并且对发送信息的量也没有限制。</p>
+<p><strong>注释：</strong>然而，默认情况下，POST 方法的发送信息的量最大值为 8 MB（可通过设置 php.ini 文件中的 post_max_size 进行更改）。</p>
+<p><strong>何时使用 method&#x3D;”post”？</strong></p>
+<p>从带有 POST 方法的表单发送的信息，对任何人都是不可见的，并且对发送信息的量也没有限制。</p>
+<p>然而，由于变量不显示在 URL 中，所以无法把页面加入书签。</p>
+<p><strong>PHP $_REQUEST 变量</strong></p>
+<p>预定义的 $_REQUEST 变量包含了 $_GET、$_POST 和 $_COOKIE 的内容。</p>
+<p>$_REQUEST 变量可用来收集通过 GET 和 POST 方法发送的表单数据。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">实例</span><br><span class="line">你可以将 &quot;welcome.php&quot; 文件修改为如下代码，它可以接受 $_GET、$_POST等数据。</span><br><span class="line">欢迎 &lt;?php echo $_REQUEST[&quot;fname&quot;]; ?&gt;!&lt;br&gt;</span><br><span class="line">你的年龄是 &lt;?php echo $_REQUEST[&quot;age&quot;]; ?&gt;  岁。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="表单验证"><a href="#表单验证" class="headerlink" title="表单验证"></a>表单验证</h2><p><strong>什么是 $_SERVER[“PHP_SELF”] 变量?</strong></p>
+<p> $_SERVER[“PHP_SELF”]是超级全局变量，返回当前正在执行脚本的文件名，与 document root相关。</p>
+<p>所以， $_SERVER[“PHP_SELF”] 会发送表单数据到当前页面，而不是跳转到不同的页面。</p>
+<p>$_SERVER[“PHP_SELF”] 变量有可能会被黑客使用！</p>
+<p>当黑客使用跨网站脚本的HTTP链接来攻击时，$_SERVER[“PHP_SELF”]服务器变量也会被植入脚本。原因就是跨网站脚本是附在执行文件的路径后面的，因此$_SERVER[“PHP_SELF”]的字符串就会包含HTTP链接后面的JavaScript程序代码。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">XSS又叫 CSS (Cross-Site Script) ,跨站脚本攻击。恶意攻击者往Web页面里插入恶意html代码，当用户浏览该页之时，嵌入其中Web里面的html代码会被执行，从而达到恶意用户的特殊目的。</span><br></pre></td></tr></table></figure>
+
+<p><strong>什么是 htmlspecialchars()方法?</strong></p>
+<p>htmlspecialchars() 函数把一些预定义的字符转换为 HTML 实体。</p>
+<p>预定义的字符是：</p>
+<ul>
+<li>&amp; （和号） 成为 &amp;amp;</li>
+<li>“ （双引号） 成为 &amp;quot;</li>
+<li>‘ （单引号） 成为 &amp;#039;</li>
+<li>&lt; （小于） 成为 &amp;lt;</li>
+<li>&gt; （大于） 成为 &amp;gt;</li>
+</ul>
+<p><strong>如何避免 $_SERVER[“PHP_SELF”] 被利用?</strong></p>
+<p>$_SERVER[“PHP_SELF”] 可以通过 htmlspecialchars() 函数来避免被利用。</p>
+<p>form 代码如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method=&quot;post&quot; action=&quot;&lt;?php echo htmlspecialchars($_SERVER[&quot;PHP_SELF&quot;]);?&gt;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>htmlspecialchars() 把一些预定义的字符转换为 HTML 实体。现在如果用户想利用 PHP_SELF 变量, 结果将输出如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method=&quot;post&quot; action=&quot;test_form.php/&amp;quot;&amp;gt;&amp;lt;script&amp;gt;alert(&#x27;hacked&#x27;)&amp;lt;/script&amp;gt;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>尝试该漏洞失败！</p>
+<p><strong>使用PHP验证表单数据</strong></p>
+<p>首先我们对用户所有提交的数据都通过 PHP 的 htmlspecialchars() 函数处理。</p>
+<p>当我们使用 htmlspecialchars() 函数时，在用户尝试提交以下文本域:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;location.href(&#x27;http://www.runoob.com&#x27;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>该代码将不会被执行，因为它会被保存为HTML转义代码，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;lt;script&amp;gt;location.href(&#x27;http://www.runoob.com&#x27;)&amp;lt;/script&amp;gt;</span><br></pre></td></tr></table></figure>
+
+<p>当用户提交表单时，我们将做以下两件事情：</p>
+<ol>
+<li><strong>使用 PHP trim() 函数去除用户输入数据中不必要的字符 (如：空格，tab，换行)。</strong></li>
+<li><strong>使用PHP stripslashes()函数去除用户输入数据中的反斜杠 (\)</strong></li>
+</ol>
+<p>我们将这些过滤的函数写在一个我们自己定义的函数中，这样可以大大提高代码的复用性。将函数命名为 test_input()。</p>
+<p>现在，我们可以通过test_input()函数来检测 $_POST 中的所有变量, 脚本代码如下所示</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">// 定义变量并默认设置为空值</span><br><span class="line">$name = $email = $gender = $comment = $website = &quot;&quot;;</span><br><span class="line"> </span><br><span class="line">if ($_SERVER[&quot;REQUEST_METHOD&quot;] == &quot;POST&quot;)</span><br><span class="line">&#123;</span><br><span class="line">  $name = test_input($_POST[&quot;name&quot;]);</span><br><span class="line">  $email = test_input($_POST[&quot;email&quot;]);</span><br><span class="line">  $website = test_input($_POST[&quot;website&quot;]);</span><br><span class="line">  $comment = test_input($_POST[&quot;comment&quot;]);</span><br><span class="line">  $gender = test_input($_POST[&quot;gender&quot;]);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function test_input($data)</span><br><span class="line">&#123;</span><br><span class="line">  $data = trim($data);</span><br><span class="line">  $data = stripslashes($data);</span><br><span class="line">  $data = htmlspecialchars($data);</span><br><span class="line">  return $data;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>preg_match — 进行正则表达式匹配</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line">int preg_match ( string $pattern , string $subject [, array $matches [, int $flags ]] )</span><br><span class="line"></span><br><span class="line">在 subject 字符串中搜索与 pattern 给出的正则表达式相匹配的内容。如果提供了 matches ，则其会被搜索的结果所填充。$matches[0] 将包含与整个模式匹配的文本，$matches[1] 将包含与第一个捕获的括号中的子模式所匹配的文本，以此类推。</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="PHP文件"><a href="#PHP文件" class="headerlink" title="PHP文件"></a>PHP文件</h2><p><strong>打开文件</strong>：fopen() 函数用于在 PHP 中打开文件。</p>
+<p><strong>关闭文件：</strong>fclose() 函数用于关闭打开的文件。</p>
+<p><strong>检测文件末尾（EOF）</strong>：</p>
+<p>feof() 函数检测是否已到达文件末尾（EOF）。</p>
+<p>在循环遍历未知长度的数据时，feof() 函数很有用。</p>
+<p><strong>注释：</strong>在 w 、a 和 x 模式下，您无法读取打开的文件！</p>
+<p><strong>逐行读取文件</strong>：</p>
+<p>fgets() 函数用于从文件中逐行读取文件。</p>
+<p><strong>注释：</strong>在调用该函数之后，文件指针会移动到下一行。</p>
+<p><strong>逐字符读取文件</strong>：</p>
+<p>fgetc() 函数用于从文件中逐字符地读取文件。</p>
+<p><strong>注释：</strong>在调用该函数之后，文件指针会移动到下一个字符。用该函数之后，文件指针会移动到下一行。</p>
+<h2 id="PHP-COOKIE"><a href="#PHP-COOKIE" class="headerlink" title="PHP COOKIE"></a>PHP COOKIE</h2><p>cookie 常用于识别用户。cookie 是一种服务器留在用户计算机上的小文件。每当同一台计算机通过浏览器请求页面时，这台计算机将会发送 cookie。通过 PHP，您能够创建并取回 cookie 的值。</p>
+<p><strong>如何创建Cookie</strong></p>
+<p>setcookie() 函数用于设置 cookie。</p>
+<p><strong>注释：</strong>setcookie() 函数必须位于 <html> <strong>标签之前</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//语法：setcookie(name, value, expire, path, domain);</span><br><span class="line">例子</span><br><span class="line">&lt;?php</span><br><span class="line">setcookie(&quot;user&quot;, &quot;runoob&quot;, time()+3600);</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>如何取回 Cookie 的值？</strong></p>
+<p>PHP 的 $_COOKIE 变量用于取回 cookie 的值。</p>
+<p>在下面的实例中，我们取回了名为 “user” 的 cookie 的值，并把它显示在了页面上：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">// 输出 cookie 值</span><br><span class="line">echo $_COOKIE[&quot;user&quot;];</span><br><span class="line"></span><br><span class="line">// 查看所有 cookie</span><br><span class="line">print_r($_COOKIE);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>用isset() 函数来确认是否已设置了 cookie：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">if (isset($_COOKIE[&quot;user&quot;]))</span><br><span class="line">    echo &quot;欢迎 &quot; . $_COOKIE[&quot;user&quot;] . &quot;!&lt;br&gt;&quot;;</span><br><span class="line">else</span><br><span class="line">    echo &quot;普通访客!&lt;br&gt;&quot;;</span><br><span class="line">?&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="PHP-Session"><a href="#PHP-Session" class="headerlink" title="PHP Session"></a>PHP Session</h2><p>PHP session 变量用于存储关于用户会话（session）的信息，或者更改用户会话（session）的设置。Session 变量存储单一用户的信息，并且对于应用程序中的所有页面都是可用的。</p>
+<p>Session 的工作机制是：为每个访客创建一个唯一的 id (UID)，并基于这个 UID 来存储变量。UID 存储在 cookie 中，或者通过 URL 进行传导。</p>
+<p> <strong>开始 PHP Session</strong></p>
+<p>在您把用户信息存储到 PHP session 中之前，首先必须启动会话。</p>
+<p><strong>注释：</strong>session_start() 函数必须位于 <html> 标签之前：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php session_start(); ?&gt;</span><br><span class="line"> </span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">//上面的代码会向服务器注册用户的会话，以便您可以开始保存用户信息，同时会为用户会话分配一个 UID。</span><br></pre></td></tr></table></figure>
+
+<p><strong>存储 Session 变量</strong></p>
+<p>存储和取回 session 变量的正确方法是使用 PHP $_SESSION 变量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">// 存储 session 数据</span><br><span class="line">$_SESSION[&#x27;views&#x27;]=1;</span><br><span class="line">?&gt;</span><br><span class="line"> </span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> </span><br><span class="line">&lt;?php</span><br><span class="line">// 检索 session 数据</span><br><span class="line">echo &quot;浏览量：&quot;. $_SESSION[&#x27;views&#x27;];</span><br><span class="line">?&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">//输出： 浏览量：1</span><br></pre></td></tr></table></figure>
+
+<p><strong>销毁 Session</strong></p>
+<p>如果您希望删除某些 session 数据，可以使用 unset() 或 session_destroy() 函数。</p>
+<p>unset() 函数用于释放指定的 session 变量：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_start();</span><br><span class="line">if(isset($_SESSION[&#x27;views&#x27;]))</span><br><span class="line">&#123;</span><br><span class="line"> -   unset($_SESSION[&#x27;views&#x27;]);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>也可以通过调用 session_destroy() 函数彻底销毁 session：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">session_destroy();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注释：</strong>session_destroy() 将重置 session，将失去所有已存储的 session 数据。</p>
+<h2 id="PHP-错误处理"><a href="#PHP-错误处理" class="headerlink" title="PHP 错误处理"></a>PHP 错误处理</h2><ul>
+<li>简单的 “die()” 语句</li>
+<li>自定义错误和错误触发器</li>
+<li>错误报告</li>
+</ul>
+<h2 id="PHP过滤器"><a href="#PHP过滤器" class="headerlink" title="PHP过滤器"></a>PHP过滤器</h2><p><strong>PHP Filter 函数</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">描述</th>
+<th align="left">PHP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-filter-has-var.html">filter_has_var()</a></td>
+<td align="left">检查是否存在指定输入类型的变量。</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-filter-id.html">filter_id()</a></td>
+<td align="left">返回指定过滤器的 ID 号。</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-filter-input.html">filter_input()</a></td>
+<td align="left">从脚本外部获取输入，并进行过滤。</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-filter-input-array.html">filter_input_array()</a></td>
+<td align="left">从脚本外部获取多项输入，并进行过滤。</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-filter-list.html">filter_list()</a></td>
+<td align="left">返回包含所有得到支持的过滤器的一个数组。</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-filter-var-array.html">filter_var_array()</a></td>
+<td align="left">获取多个变量，并进行过滤。</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/func-filter-var.html">filter_var()</a></td>
+<td align="left">获取一个变量，并进行过滤。</td>
+<td align="left">5</td>
+</tr>
+</tbody></table>
+<p><strong>PHP 过滤器</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">ID 名称</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-callback.html">FILTER_CALLBACK</a></td>
+<td align="left">调用用户自定义函数来过滤数据。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-string.html">FILTER_SANITIZE_STRING</a></td>
+<td align="left">去除标签，去除或编码特殊字符。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-stripped.html">FILTER_SANITIZE_STRIPPED</a></td>
+<td align="left">“string” 过滤器的别名。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-encoded.html">FILTER_SANITIZE_ENCODED</a></td>
+<td align="left">URL-encode 字符串，去除或编码特殊字符。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-special-chars.html">FILTER_SANITIZE_SPECIAL_CHARS</a></td>
+<td align="left">HTML 转义字符 ‘“&lt;&gt;&amp; 以及 ASCII 值小于 32 的字符。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-email.html">FILTER_SANITIZE_EMAIL</a></td>
+<td align="left">删除所有字符，除了字母、数字以及 !#$%&amp;’*+-&#x2F;&#x3D;?^_&#96;{|}~@.[]</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-url.html">FILTER_SANITIZE_URL</a></td>
+<td align="left">删除所有字符，除了字母、数字以及 $-_.+!*’(),{}|^~[]&#96;&lt;&gt;#%”;&#x2F;?:@&amp;&#x3D;</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-number-int.html">FILTER_SANITIZE_NUMBER_INT</a></td>
+<td align="left">删除所有字符，除了数字和 +-</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-number-float.html">FILTER_SANITIZE_NUMBER_FLOAT</a></td>
+<td align="left">删除所有字符，除了数字、+- 以及 .,eE</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-sanitize-magic-quotes.html">FILTER_SANITIZE_MAGIC_QUOTES</a></td>
+<td align="left">应用 addslashes()。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-unsafe-raw.html">FILTER_UNSAFE_RAW</a></td>
+<td align="left">不进行任何过滤，去除或编码特殊字符。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-validate-int.html">FILTER_VALIDATE_INT</a></td>
+<td align="left">把值作为整数来验证。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-validate-boolean.html">FILTER_VALIDATE_BOOLEAN</a></td>
+<td align="left">把值作为布尔选项来验证。如果是 “1”、”true”、”on” 和 “yes”，则返回 TRUE。如果是 “0”、”false”、”off”、”no” 和 “”，则返回 FALSE。否则返回 NULL。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-validate-float.html">FILTER_VALIDATE_FLOAT</a></td>
+<td align="left">把值作为浮点数来验证。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-validate-regexp.html">FILTER_VALIDATE_REGEXP</a></td>
+<td align="left">根据 regexp（一种兼容 Perl 的正则表达式）来验证值。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-validate-url.html">FILTER_VALIDATE_URL</a></td>
+<td align="left">把值作为 URL 来验证。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-validate-email.html">FILTER_VALIDATE_EMAIL</a></td>
+<td align="left">把值作为 e-mail 地址来验证。</td>
+</tr>
+<tr>
+<td align="left"><a target="_blank" rel="noopener" href="https://www.runoob.com/php/filter-validate-ip.html">FILTER_VALIDATE_IP</a></td>
+<td align="left">把值作为 IP 地址来验证，只限 IPv4 或 IPv6 或 不是来自私有或者保留的范围。</td>
+</tr>
+</tbody></table>
+
+  </div>
+  
+  
+  
+
+  
+  <div class="pagination-post">
+    
+    <a href="/2023/02/19/%E6%B1%87%E7%BC%96/">
+      <div class="prev-title"><i class="fas fa-chevron-left"></i>汇编</div>
+      <div class="prev-desc">X86指令集数据传送指令通用数据传送指令： MOV（MOVSX&amp;#x2F;MOVZX) DEST, SRC;
+堆栈操作指令：PUSH(PUSHA&amp;#x2F;PUSHAD)SRC
+​							POP(POPA&amp;#x2F;POPAD) DEST
+数据交换指令：XCHG OPR1,OPR2 
+地址传送指令： LEA...</div>
+    </a>
+    
+    
+    <a href="/2023/02/19/PHP/">
+      <div class="next-title">掌握PHP “Hello World” 的输出（一）<i class="fas fa-chevron-right"></i></div>
+      <div class="next-desc">[内容均引自菜鸟教程](PHP 教程 | 菜鸟教程 (runoob.com))
+PHP变量PHP 四种不同的变量作用域：
+
+local 局部作用域
+global 全局作用域
+static 静态作用域
+parameter 函数参数作用域
+
+如果要在一个函数中访问一个全局变量，需要使用 global 关键字。
+PHP...</div>
+    </a>
+    
+  </div>
+  
+    <div class="comment-head" id="Direct comments">
+        <hr>
+        <div class="comment-headline">
+            <i class="fas fa-comments fa-fw"></i>
+            <span>Comments</span>
+        </div>
+        
+            <div id="Discuss-Comments"></div>
+<script>
+  function LoadDiscuss() {
+    mengd.getScript('https://unpkg.com/discuss@latest/dist/discuss.js', function() {
+      Discuss.init(Object.assign({
+        el: '#Discuss-Comments',
+        serverURLs: '',
+      } , {"source":"https://unpkg.com/discuss@latest/dist/discuss.js","serverURLs":null}))
+    })
+  }
+  LoadDiscuss()
+</script>
+
+        
+    </div>
+
+</article>
+
+
+
+<div id="toc-wrap">
+  <div id="toc">
+    <div class="toc-title">
+      <div>
+        Catalog
+        <span class="num">0%</span>
+      </div>
+      <progress class="progress" value="0" max="100"></progress>
+    </div>
+    <div class="toc-list">
+      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E8%A1%A8%E5%8D%95%E5%92%8C%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5"><span class="toc-text">PHP表单和用户输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET-%E5%8F%98%E9%87%8F"><span class="toc-text">$_GET 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#POST-%E5%8F%98%E9%87%8F"><span class="toc-text">$_POST 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81"><span class="toc-text">表单验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E6%96%87%E4%BB%B6"><span class="toc-text">PHP文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-COOKIE"><span class="toc-text">PHP COOKIE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-Session"><span class="toc-text">PHP Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">PHP 错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E8%BF%87%E6%BB%A4%E5%99%A8"><span class="toc-text">PHP过滤器</span></a></li></ol>
+    </div>
+  </div>
+</div>
+
+        </main>
+    </div>
+    <section id="rightside">
+    <div class="rightside-item">
+
+         
+        
+        
+            <a id="open-toc" title="Catalog">
+                <i class="fas fa-list-ul"></i>
+            </a>
+        
+
+
+         
+         
+        <a href="javascript:void(0);" id="darkmode" title="Dark/Light ">
+            <i class="fas fa-moon"></i>
+        </a>
+         
+
+
+        
+            <a href="#Direct comments" title="Direct comments">
+                <i class="fas fa-comments"></i>
+            </a>
+        
+
+
+        <a href="#" title="Back To Top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+</section>
+    
+
+<footer class="footer" id="footer">
+  <div class="copyright">
+    &copy; 2020 - 2023
+    <i class="fas fa-fan"></i>
+    Tim0
+  </div>
+  <div class="framework-info">
+    <span>Framework</span>
+    <a href="https://hexo.io" target="_blank">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme </span>
+    <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+  </div>
+  <div class="custom-text">In case i don't see you,good morning,good afternoon and good night.</div>
+</footer>
+    <div id="mask" onclick="closeAll()"></div>
+    
+    <script src="/js/main.js"></script>
+    
+<script>
+  var originTitle = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)  " + originTitle;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*)  " + originTitle;
+      titleTime = setTimeout(function() {
+        document.title = originTitle;
+      }, 2000);
+    }
+  });
+</script>
+
+
+
+<script src="/js/lazyload.js"></script>
+
+
+
+
+<script>
+  function loadCardLink() {
+    cardLink.server = 'https://cardlink-server.deta.dev/?url='
+    cardLink(mengd.$queryAll('#post>.post-content a[target=_blank]'))
+  }
+  mengd.getScript('/third-party/js/cardlink.js', loadCardLink)
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  mengd.getScript('/third-party/js/prefetch-page.js', () => {
+    const requestIdleCa = requestIdleCallback
+    if (requestIdleCa) {
+      requestIdleCa(() => {
+        prefetch({"delay":1000,"threshold":25})
+      })
+    } else {
+      setTimeout(() => {
+        prefetch({"delay":1000,"threshold":25})
+      }, 3000);
+    }
+  })
+</script>
+
+</body>
+
+</html>

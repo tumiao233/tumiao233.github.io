@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-language" content="en">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+<title>掌握PHP “Hello World” 的输出（一） | Tim0&#39;Blog</title>
+<meta name="author" content="Tim0">
+<meta name="copyright" content="Tim0">
+
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+
+
+
+<meta name="description" content="[内容均引自菜鸟教程](PHP 教程 | 菜鸟教程 (runoob.com)) PHP变量PHP 四种不同的变量作用域：  local 局部作用域 global 全局作用域 static 静态作用域 parameter 函数参数作用域  如果要在一个函数中访问一个全局变量，需要使用 global 关键字。 PHP 将所有全局变量存储在一个名为 $GLOBALS[index] 的数组中。 index">
+<meta property="og:type" content="article">
+<meta property="og:title" content="掌握PHP “Hello World” 的输出（一）">
+<meta property="og:url" content="https://tumiao233.github.io/2023/02/19/PHP/">
+<meta property="og:site_name" content="Tim0&#39;Blog">
+<meta property="og:description" content="[内容均引自菜鸟教程](PHP 教程 | 菜鸟教程 (runoob.com)) PHP变量PHP 四种不同的变量作用域：  local 局部作用域 global 全局作用域 static 静态作用域 parameter 函数参数作用域  如果要在一个函数中访问一个全局变量，需要使用 global 关键字。 PHP 将所有全局变量存储在一个名为 $GLOBALS[index] 的数组中。 index">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://tumiao233.github.io/img/Tim0.png">
+<meta property="article:published_time" content="2023-02-19T12:01:53.480Z">
+<meta property="article:modified_time" content="2022-04-05T08:16:38.665Z">
+<meta property="article:author" content="Tim0">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tumiao233.github.io/img/Tim0.png">
+
+
+<link href="/third-party/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<script src="/js/utlis.js"></script>
+<script>
+  (function() {
+    var html = mengd.$query('html')
+    var isDark = localStorage.isDark === 'true'
+    if (isDark) html.setAttribute('theme', 'dark')
+    else html.removeAttribute('theme')
+  })()
+</script>
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+     
+    
+
+<script>
+  var $config = {
+      CDN: {
+        fancyboxJs: "/third-party/js/fancybox.js",
+        fancyboxCss: "/third-party/css/fancybox.css"
+      },
+      
+      
+      codeBlockExpand: {
+        enable: true,
+        height: 400,
+        scrollTop: 200
+      }
+      
+    }
+</script>
+
+    
+
+
+    <div id="body-wrap">
+        
+<nav id="nav-wrap">
+  <div class="navbar">
+    <div class="bar">
+      <a href="/" class="title">Tim0'Blog</a>
+      
+      <ul class="menu">
+         
+         
+        
+          
+            <li><a href="/">首页</a></li>
+           
+         
+        
+          
+          <li>
+            <a class="menu-child-hover" href="javascript:void(0);">找文章</a>
+            <ul class="menu-child">
+              
+              <li><a href='/tags'>标签</a></li>
+              
+              <li><a href='/categories'>分类</a></li>
+              
+              <li><a href='/archives'>归档</a></li>
+              
+            </ul>
+          </li>
+           
+         
+        
+          
+            <li><a href="/link">友情链接</a></li>
+           
+         
+        
+          
+            <li><a href="/about">关于我</a></li>
+           
+        
+      </ul>
+      <i class="fas fa-bars open-nav"></i>
+    </div>
+  </div>
+  <div id="mobile-nav">
+    <ul>
+       
+         
+        
+        
+          <li><a href="/">首页</a></li>
+        
+       
+        
+         
+          <li><a href='/tags'>标签</a></li>
+        
+          <li><a href='/categories'>分类</a></li>
+        
+          <li><a href='/archives'>归档</a></li>
+         
+       
+        
+        
+          <li><a href="/link">友情链接</a></li>
+        
+       
+        
+        
+          <li><a href="/about">关于我</a></li>
+        
+      
+    </ul>
+  </div>
+</nav>
+
+
+        <header id="header">
+    <div class="header-author">
+        <a href="/" class="author">
+            <img src="/img/load.gif" data-src="/img/Tim0.png" alt="Tim0" class="author-avatar">
+            <div class="author-name">
+                Tim0
+            </div>
+        </a>
+    </div>
+    <div class="header-description">
+        <p>
+            Be modest，be thirsty！
+        </p>
+        <div class="header-icon">
+            
+            
+                <a target="_blank" rel="noopener" href="https://github.com/tumiao233"><i class="fab fa-github"></i></a>
+            
+                <a href="mailto:tumiao@bupt.edu.cn"><i class="fa fa-envelope"></i></a>
+            
+        </div>
+    </div>
+</header>
+        <main id="main">
+            <article id="post">
+  <div class="post-info">
+    <div class="post-title">
+      <h1>掌握PHP “Hello World” 的输出（一）</h1>
+    </div>
+    <div class="post-meta">
+      <div class="post-date">
+        <i class="far fa-calendar-alt fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">
+          Created
+          2023-02-19 |
+        </span>
+
+        <i class="fas fa-history fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">
+          Updated
+          2022-04-05
+        </span>
+      </div>
+      <div class="post-meta-wordcount">
+        <i class="far fa-file-word fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">Word Count:</span>
+        <span class="word-count">3.4k | </span>
+        <i class="far fa-clock fa-fw post-meta-icon"></i>
+        <span class="post-meta-label">Reading time:</span>
+        <span>14min</span>
+        
+    | <i class="far fa-eye fa-fw post-meta-icon"></i>
+    
+        <span class="post-meta-label">Visitors:</span>
+        <span id="Discuss-Visitors">0</span>
+    
+
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="post-content">
+    <p>[内容均引自菜鸟教程](<a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-tutorial.html">PHP 教程 | 菜鸟教程 (runoob.com)</a>)</p>
+<h2 id="PHP变量"><a href="#PHP变量" class="headerlink" title="PHP变量"></a>PHP变量</h2><p>PHP 四种不同的变量作用域：</p>
+<ul>
+<li>local 局部作用域</li>
+<li>global 全局作用域</li>
+<li>static 静态作用域</li>
+<li>parameter 函数参数作用域</li>
+</ul>
+<p>如果要在一个函数中访问一个全局变量，需要使用 global 关键字。</p>
+<p>PHP 将所有全局变量存储在一个名为 $GLOBALS[<em>index</em>] 的数组中。 <em>index</em> 保存变量的名称。这个数组可以在函数内部访问，也可以直接用来更新全局变量。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><ul>
+<li><p>PHP var_dump() 函数返回变量的数据类型和值</p>
+</li>
+<li><p>PHP var_dump() 函数返回数组的数据类型和值</p>
+</li>
+</ul>
+<h2 id="PHP类型比较"><a href="#PHP类型比较" class="headerlink" title="PHP类型比较"></a>PHP类型比较</h2><ul>
+<li>松散比较：使用两个等号 <strong>&#x3D;&#x3D;</strong> 比较，只比较值，不比较类型。</li>
+<li>严格比较：用三个等号 <strong>&#x3D;&#x3D;&#x3D;</strong> 比较，除了比较值，也比较类型</li>
+</ul>
+<h2 id="设置-PHP-常量"><a href="#设置-PHP-常量" class="headerlink" title="设置 PHP 常量"></a>设置 PHP 常量</h2><p>设置常量，使用 define() 函数，函数语法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bool define ( string $name , mixed $value [, bool $case_insensitive = false ] )</span><br></pre></td></tr></table></figure>
+
+<p>该函数有三个参数:</p>
+<ul>
+<li><strong>name：</strong>必选参数，常量名称，即标志符。</li>
+<li><strong>value：</strong>必选参数，常量的值。</li>
+<li><strong>case_insensitive</strong> ：可选参数，如果设置为 TRUE，该常量则大小写不敏感。默认是大小写敏感的。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">// 区分大小写的常量名</span><br><span class="line">define(&quot;GREETING&quot;, &quot;欢迎访问 Runoob.com&quot;,true);</span><br><span class="line">echo GREETING;    // 输出 &quot;欢迎访问 Runoob.com&quot;</span><br><span class="line">echo &#x27;&lt;br&gt;&#x27;;</span><br><span class="line">echo greeting;   // 输出 &quot;greeting&quot;，但是有警告信息，表示该常量未定义</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="PHP字符串"><a href="#PHP字符串" class="headerlink" title="PHP字符串"></a>PHP字符串</h2><p><strong>PHP 并置运算符</strong></p>
+<p>在 PHP 中，只有一个字符串运算符。</p>
+<p>并置运算符 <strong>(.) 用于把两个字符串值连接起来</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$txt1=&quot;Hello world!&quot;;</span><br><span class="line">$txt2=&quot;What a nice day!&quot;;</span><br><span class="line">echo $txt1 . &quot; &quot; . $txt2;//输出Hello world! What a nice day!</span><br><span class="line">?&gt;</span><br><span class="line">//在上面的代码中，我们已经使用了两次并置运算符。这是由于我们需要在两个字符串之间插入一个空格。</span><br></pre></td></tr></table></figure>
+
+<p><strong>PHP strlen() 函数</strong></p>
+<p>strlen() 函数返回字符串的长度（字节数）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo strlen(&quot;Hello world!&quot;);//输出12</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>PHP strpos() 函数</strong></p>
+<p>strpos() 函数用于在字符串内查找一个字符或一段指定的文本。</p>
+<p>如果在字符串中找到匹配，该函数会返回第一个匹配的字符位置。如果未找到匹配，则返回 FALSE。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo strpos(&quot;Hello world!&quot;,&quot;world&quot;);//输出6</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h2><p>另一个条件运算符是”?:”（或三元）运算符 。</p>
+<p><strong>语法格式</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(expr1) ? (expr2) : (expr3) </span><br></pre></td></tr></table></figure>
+
+<p>对 expr1 求值为 TRUE 时的值为 expr2，在 expr1 求值为 FALSE 时的值为 expr3。</p>
+<p>自 PHP 5.3 起，可以省略三元运算符中间那部分。表达式 expr1 ?: expr3 在 expr1 求值为 TRUE 时返回 expr1，否则返回 expr3。</p>
+<p><strong>实例</strong></p>
+<p>以下实例中通过判断 $_GET 请求中含有 user 值，如果有返回 $_GET[‘user’]，否则返回 nobody：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$test = &#x27;菜鸟教程&#x27;;</span><br><span class="line">// 普通写法</span><br><span class="line">$username = isset($test) ? $test : &#x27;nobody&#x27;;</span><br><span class="line">echo $username, PHP_EOL;//菜鸟教程</span><br><span class="line"> </span><br><span class="line">// PHP 5.3+ 版本写法</span><br><span class="line">$username = $test ?: &#x27;nobody&#x27;;</span><br><span class="line">echo $username, PHP_EOL;</span><br><span class="line">?&gt;//菜鸟教程</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="太空船运算符"><a href="#太空船运算符" class="headerlink" title="太空船运算符"></a>太空船运算符</h2><p>语法是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$c = $a &lt;=&gt; $b;</span><br></pre></td></tr></table></figure>
+
+<p>这句代码的意思是:</p>
+<ul>
+<li>如果 $a &gt; $b, $c 的值为 1</li>
+<li>如果 $a &#x3D;&#x3D; $b, $c 的值为 0</li>
+<li>如果 $a &lt; $b, $c 的值为-1</li>
+</ul>
+<h2 id="运算符优先级"><a href="#运算符优先级" class="headerlink" title="运算符优先级"></a><strong>运算符优先级</strong></h2><p>or 和 ||，&amp;&amp; 和 and 都是逻辑运算符，效果一样，但是其优先级却不一样。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">// 优先级： &amp;&amp;  &gt;  =  &gt;  and</span><br><span class="line">// 优先级： ||  &gt;  =  &gt;  or</span><br><span class="line"> </span><br><span class="line">$a = 3;</span><br><span class="line">$b = false;</span><br><span class="line">$c = $a or $b;</span><br><span class="line">var_dump($c);          // 这里的 $c 为 int 值3，而不是 boolean 值 true</span><br><span class="line">$d = $a || $b;</span><br><span class="line">var_dump($d);          //这里的 $d 就是 boolean 值 true </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="PHP-数组排序函数"><a href="#PHP-数组排序函数" class="headerlink" title="PHP - 数组排序函数"></a>PHP - 数组排序函数</h2><ul>
+<li>sort() - 对数组进行升序排列</li>
+<li>rsort() - 对数组进行降序排列</li>
+<li>asort() - 根据关联数组的值，对数组进行升序排列</li>
+<li>ksort() - 根据关联数组的键，对数组进行升序排列</li>
+<li>arsort() - 根据关联数组的值，对数组进行降序排列</li>
+<li>krsort() - 根据关联数组的键，对数组进行降序排列</li>
+</ul>
+<h2 id="PHP-超级全局变量"><a href="#PHP-超级全局变量" class="headerlink" title="PHP 超级全局变量"></a>PHP 超级全局变量</h2><p>PHP中预定义了几个超级全局变量（superglobals） ，这意味着它们在一个脚本的全部作用域中都可用。 你不需要特别说明，就可以在函数及类中使用。</p>
+<p><strong>PHP $GLOBALS</strong></p>
+<p>$GLOBALS 是PHP的一个超级全局变量组，在一个PHP脚本的全部作用域中都可以访问。</p>
+<p>$GLOBALS 是一个包含了<strong>全部变量</strong>的全局组合数组。<strong>变量的名字就是数组的键</strong>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">$x = 75; </span><br><span class="line">$y = 25;</span><br><span class="line"> </span><br><span class="line">function addition() </span><br><span class="line">&#123; </span><br><span class="line">    $GLOBALS[&#x27;z&#x27;] = $GLOBALS[&#x27;x&#x27;] + $GLOBALS[&#x27;y&#x27;]; </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">addition(); </span><br><span class="line">echo $z; </span><br><span class="line">?&gt;// z 是一个$GLOBALS数组中的超级全局变量，该变量同样可以在函数外访问。</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>PHP $_SERVER</strong></p>
+<p>$_SERVER 是一个包含了诸如头信息(header)、路径(path)、以及脚本位置(script locations)等等信息的数组。这个数组中的项目由 Web 服务器创建。不能保证每个服务器都提供全部项目；服务器可能会忽略一些，或者提供一些没有在这里列举出来的项目。</p>
+<p>所有 $_SERVER 变量中的重要元素:</p>
+<table>
+<thead>
+<tr>
+<th align="left">元素&#x2F;代码</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$_SERVER[‘PHP_SELF’]</td>
+<td align="left">当前执行脚本的文件名，与 document root 有关。例如，在地址为 <a target="_blank" rel="noopener" href="http://example.com/test.php/foo.bar">http://example.com/test.php/foo.bar</a> 的脚本中使用 $<em>SERVER[‘PHP_SELF’] 将得到 &#x2F;test.php&#x2F;foo.bar。__FILE</em>_ 常量包含当前(例如包含)文件的完整路径和文件名。 从 PHP 4.3.0 版本开始，如果 PHP 以命令行模式运行，这个变量将包含脚本名。之前的版本该变量不可用。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘GATEWAY_INTERFACE’]</td>
+<td align="left">服务器使用的 CGI 规范的版本；例如，”CGI&#x2F;1.1”。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SERVER_ADDR’]</td>
+<td align="left">当前运行脚本所在的服务器的 IP 地址。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SERVER_NAME’]</td>
+<td align="left">当前运行脚本所在的服务器的主机名。如果脚本运行于虚拟主机中，该名称是由那个虚拟主机所设置的值决定。(如: <a target="_blank" rel="noopener" href="http://www.runoob.com/">www.runoob.com</a>)</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SERVER_SOFTWARE’]</td>
+<td align="left">服务器标识字符串，在响应请求时的头信息中给出。 (如：Apache&#x2F;2.2.24)</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SERVER_PROTOCOL’]</td>
+<td align="left">请求页面时通信协议的名称和版本。例如，”HTTP&#x2F;1.0”。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘REQUEST_METHOD’]</td>
+<td align="left">访问页面使用的请求方法；例如，”GET”, “HEAD”，”POST”，”PUT”。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘REQUEST_TIME’]</td>
+<td align="left">请求开始时的时间戳。从 PHP 5.1.0 起可用。 (如：1377687496)</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘QUERY_STRING’]</td>
+<td align="left">query string（查询字符串），如果有的话，通过它进行页面访问。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘HTTP_ACCEPT’]</td>
+<td align="left">当前请求头中 Accept: 项的内容，如果存在的话。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘HTTP_ACCEPT_CHARSET’]</td>
+<td align="left">当前请求头中 Accept-Charset: 项的内容，如果存在的话。例如：”iso-8859-1,*,utf-8”。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘HTTP_HOST’]</td>
+<td align="left">当前请求头中 Host: 项的内容，如果存在的话。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘HTTP_REFERER’]</td>
+<td align="left">引导用户代理到当前页的前一页的地址（如果存在）。由 user agent 设置决定。并不是所有的用户代理都会设置该项，有的还提供了修改 HTTP_REFERER 的功能。简言之，该值并不可信。)</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘HTTPS’]</td>
+<td align="left">如果脚本是通过 HTTPS 协议被访问，则被设为一个非空的值。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘REMOTE_ADDR’]</td>
+<td align="left">浏览当前页面的用户的 IP 地址。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘REMOTE_HOST’]</td>
+<td align="left">浏览当前页面的用户的主机名。DNS 反向解析不依赖于用户的 REMOTE_ADDR。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘REMOTE_PORT’]</td>
+<td align="left">用户机器上连接到 Web 服务器所使用的端口号。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SCRIPT_FILENAME’]</td>
+<td align="left">当前执行脚本的绝对路径。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SERVER_ADMIN’]</td>
+<td align="left">该值指明了 Apache 服务器配置文件中的 SERVER_ADMIN 参数。如果脚本运行在一个虚拟主机上，则该值是那个虚拟主机的值。(如：<a href="mailto:&#x73;&#111;&#109;&#101;&#x6f;&#x6e;&#101;&#64;&#x72;&#117;&#x6e;&#111;&#111;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x73;&#111;&#109;&#101;&#x6f;&#x6e;&#101;&#64;&#x72;&#117;&#x6e;&#111;&#111;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>)</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SERVER_PORT’]</td>
+<td align="left">Web 服务器使用的端口。默认值为 “80”。如果使用 SSL 安全连接，则这个值为用户设置的 HTTP 端口。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SERVER_SIGNATURE’]</td>
+<td align="left">包含了服务器版本和虚拟主机名的字符串。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘PATH_TRANSLATED’]</td>
+<td align="left">当前脚本所在文件系统（非文档根目录）的基本路径。这是在服务器进行虚拟到真实路径的映像后的结果。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SCRIPT_NAME’]</td>
+<td align="left">包含当前脚本的路径。这在页面需要指向自己时非常有用。<strong>FILE</strong> 常量包含当前脚本(例如包含文件)的完整路径和文件名。</td>
+</tr>
+<tr>
+<td align="left">$_SERVER[‘SCRIPT_URI’]</td>
+<td align="left">URI 用来指定要访问的页面。例如 “&#x2F;index.html”。</td>
+</tr>
+</tbody></table>
+<p><strong>PHP $_REQUEST</strong></p>
+<p>PHP $_REQUEST 用于收集HTML表单提交的数据。</p>
+<p>以下实例显示了一个输入字段（input）及提交按钮(submit)的表单(form)。 当用户通过点击 “Submit” 按钮提交表单数据时, 表单数据将发送至<form>标签中 action 属性中指定的脚本文件。 在这个实例中，我们指定文件来处理表单数据。如果你希望其他的PHP文件来处理该数据，你可以修改该指定的脚本文件名。 然后，我们可以使用超级全局变量 $_REQUEST 来收集表单中的 input 字段数据:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> </span><br><span class="line">&lt;form method=&quot;post&quot; action=&quot;&lt;?php echo $_SERVER[&#x27;PHP_SELF&#x27;];?&gt;&quot;&gt;</span><br><span class="line">Name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"> </span><br><span class="line">&lt;?php </span><br><span class="line">$name = $_REQUEST[&#x27;fname&#x27;]; </span><br><span class="line">echo $name; </span><br><span class="line">?&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>PHP $_POST</strong></p>
+<p>PHP $_POST 被广泛应用于收集表单数据，在HTML form标签的指定该属性：”method&#x3D;”post”。</p>
+<p>以下实例显示了一个输入字段（input）及提交按钮(submit)的表单(form)。 当用户通过点击 “Submit” 按钮提交表单数据时, 表单数据将发送至<form>标签中 action 属性中指定的脚本文件。 在这个实例中，我们指定文件来处理表单数据。如果你希望其他的PHP文件来处理该数据，你可以修改该指定的脚本文件名。 然后，我们可以使用超级全局变量 $_POST 来收集表单中的 input 字段数据:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> </span><br><span class="line">&lt;form method=&quot;post&quot; action=&quot;&lt;?php echo $_SERVER[&#x27;PHP_SELF&#x27;];?&gt;&quot;&gt;</span><br><span class="line">Name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;</span><br><span class="line">&lt;input type=&quot;submit&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"> </span><br><span class="line">&lt;?php </span><br><span class="line">$name = $_POST[&#x27;fname&#x27;]; </span><br><span class="line">echo $name; </span><br><span class="line">?&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>PHP $_GET</strong></p>
+<p>PHP $_GET 同样被广泛应用于收集表单数据，在HTML form标签的指定该属性：”method&#x3D;”get”。</p>
+<p>$_GET 也可以收集URL中发送的数据。</p>
+<p>假定我们有一个包含参数的超链接HTML页面：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;test_get.php?subject=PHP&amp;web=runoob.com&quot;&gt;Test $GET&lt;/a&gt;</span><br><span class="line">//当用户点击链接 &quot;Test $GET&quot;, 参数 &quot;subject&quot; 和 &quot;web&quot; 将发送至&quot;test_get.php&quot;,你可以在 &quot;test_get.php&quot; 文件中使用 $_GET 变量来获取这些数据。</span><br><span class="line"></span><br><span class="line">&lt;?php </span><br><span class="line">echo &quot;Study &quot; . $_GET[&#x27;subject&#x27;] . &quot; @ &quot; . $_GET[&#x27;web&#x27;];</span><br><span class="line">?&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="PHP-函数"><a href="#PHP-函数" class="headerlink" title="PHP 函数"></a>PHP 函数</h2><p><strong>[PHP 内建函数](<a target="_blank" rel="noopener" href="https://www.runoob.com/php/php-ref-array.html">PHP 5 Array 函数 | 菜鸟教程 (runoob.com)</a>)</strong></p>
+<p><strong>PHP 魔术常量</strong></p>
+<p>有八个魔术常量它们的值随着它们在代码中的位置改变而改变。</p>
+<p>例如 <em>_LINE</em>_ 的值就依赖于它在脚本中所处的行来决定。这些特殊的常量不区分大小写，如下</p>
+<p><strong><em>_LINE</em>_</strong> </p>
+<p>1.文件中的当前行号。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &#x27;这是第 &quot; &#x27;  . __LINE__ . &#x27; &quot; 行&#x27;;</span><br><span class="line">?&gt;//输出为 这是第“2”行</span><br><span class="line"></span><br><span class="line">&lt;?php</span><br><span class="line">echo &#x27;该文件位于 &quot; &#x27;  . __FILE__ . &#x27; &quot; &#x27;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.文件的完整路径和文件名。如果用在被包含文件中，则返回被包含的文件名。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &#x27;该文件位于 &quot; &#x27;  . __FILE__ . &#x27; &quot; &#x27;;</span><br><span class="line">?&gt;//该文件位于 “ E:\wamp\www\test\index.php ”</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong><em>_DIR</em>_</strong></p>
+<p>文件所在的目录。如果用在被包括文件中，则返回被包括的文件所在的目录。</p>
+<p>它等价于 dirname(<em>_FILE</em>_)。除非是根目录，否则目录中名不包括末尾的斜杠。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &#x27;该文件位于 &quot; &#x27;  . __DIR__ . &#x27; &quot; &#x27;;</span><br><span class="line">?&gt;//该文件位于 “ E:\wamp\www\test ”</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong><em>_FUNCTION</em>_</strong></p>
+<p>函数名称（PHP 4.3.0 新加）。自 PHP 5 起本常量返回该函数被定义时的名字（区分大小写）。在 PHP 4 中该值总是小写字母的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">function test() &#123;</span><br><span class="line">    echo  &#x27;函数名为：&#x27; . __FUNCTION__ ;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line">?&gt;//函数名为：test</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong><em>_CLASS</em>_</strong></p>
+<p>类的名称（PHP 4.3.0 新加）。自 PHP 5 起本常量返回该类被定义时的名字（区分大小写）。</p>
+<p>在 PHP 4 中该值总是小写字母的。类名包括其被声明的作用区域（例如 Foo\Bar）。注意自 PHP 5.4 起 <strong>CLASS</strong> 对 trait 也起作用。当用在 trait 方法中时，<strong>CLASS</strong> 是调用 trait 方法的类的名字。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class test &#123;</span><br><span class="line">    function _print() &#123;</span><br><span class="line">        echo &#x27;类名为：&#x27;  . __CLASS__ . &quot;&lt;br&gt;&quot;;</span><br><span class="line">        echo  &#x27;函数名为：&#x27; . __FUNCTION__ ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">$t = new test();</span><br><span class="line">$t-&gt;_print();</span><br><span class="line">?&gt;//类名为：test 函数名为：_print</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong><em>_TRAIT</em>_</strong></p>
+<p>Trait 的名字（PHP 5.4.0 新加）。自 PHP 5.4.0 起，PHP 实现了代码复用的一个方法，称为 traits。</p>
+<p>Trait 名包括其被声明的作用区域（例如 Foo\Bar）。</p>
+<p>从基类继承的成员被插入的 SayWorld Trait 中的 MyHelloWorld 方法所覆盖。其行为 MyHelloWorld 类中定义的方法一致。优先顺序是当前类中的方法会覆盖 trait 方法，而 trait 方法又覆盖了基类中的方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class Base &#123;</span><br><span class="line">    public function sayHello() &#123;</span><br><span class="line">        echo &#x27;Hello &#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">trait SayWorld &#123;</span><br><span class="line">    public function sayHello() &#123;</span><br><span class="line">        parent::sayHello();</span><br><span class="line">        echo &#x27;World!&#x27;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">class MyHelloWorld extends Base &#123;</span><br><span class="line">    use SayWorld;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">$o = new MyHelloWorld();</span><br><span class="line">$o-&gt;sayHello();</span><br><span class="line">?&gt;//输出：</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong><em>_METHOD</em>_</strong></p>
+<p>类的方法名（PHP 5.0.0 新加）。返回该方法被定义时的名字（区分大小写）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">function test() &#123;</span><br><span class="line">    echo  &#x27;函数名为：&#x27; . __METHOD__ ;</span><br><span class="line">&#125;</span><br><span class="line">test();</span><br><span class="line">?&gt;//函数名为：test</span><br></pre></td></tr></table></figure>
+
+
+
+<p><em>_NAMESPACE</em>_</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace MyProject;</span><br><span class="line"> </span><br><span class="line">echo &#x27;命名空间为：&quot;&#x27;, __NAMESPACE__, &#x27;&quot;&#x27;; // 输出 &quot;MyProject&quot;</span><br><span class="line">?&gt;//命名空间为：&quot;MyProject&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+  </div>
+  
+  
+  
+
+  
+  <div class="pagination-post">
+    
+    <a href="/2023/02/19/PHP2/">
+      <div class="prev-title"><i class="fas fa-chevron-left"></i>掌握PHP “Hello World” 的输出（二）</div>
+      <div class="prev-desc">
+[内容均引自菜鸟教程](PHP 教程 | 菜鸟教程 (runoob.com))
+PHP表单和用户输入PHP 中的 $_GET 和 $_POST 变量用于检索表单中的信息，比如用户输入。
+$_GET 变量预定义的 $_GET 变量用于收集来自 method&amp;#x3D;”get” 的表单中的值。
+从带有 GET 方...</div>
+    </a>
+    
+    
+    <a href="/2023/02/19/hello-world/">
+      <div class="next-title">Hello World<i class="fas fa-chevron-right"></i></div>
+      <div class="next-desc">Time Flies Fast不知不觉本科生活已将近过半，在这一年半里，我或闻或识或抱大了很多优秀的大腿，结交了很多可爱的朋友和hxd，还有许多友善的学长学姐帮我在学业上指明方向，非常感谢你们。总的来说，目前为止我的大学生活是轻松愉悦的。
+不过，既然选择了北邮，选择了网安，还是要学个一招半式的。平时上课都没啥时间...</div>
+    </a>
+    
+  </div>
+  
+    <div class="comment-head" id="Direct comments">
+        <hr>
+        <div class="comment-headline">
+            <i class="fas fa-comments fa-fw"></i>
+            <span>Comments</span>
+        </div>
+        
+            <div id="Discuss-Comments"></div>
+<script>
+  function LoadDiscuss() {
+    mengd.getScript('https://unpkg.com/discuss@latest/dist/discuss.js', function() {
+      Discuss.init(Object.assign({
+        el: '#Discuss-Comments',
+        serverURLs: '',
+      } , {"source":"https://unpkg.com/discuss@latest/dist/discuss.js","serverURLs":null}))
+    })
+  }
+  LoadDiscuss()
+</script>
+
+        
+    </div>
+
+</article>
+
+
+
+<div id="toc-wrap">
+  <div id="toc">
+    <div class="toc-title">
+      <div>
+        Catalog
+        <span class="num">0%</span>
+      </div>
+      <progress class="progress" value="0" max="100"></progress>
+    </div>
+    <div class="toc-list">
+      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%8F%98%E9%87%8F"><span class="toc-text">PHP变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E7%B1%BB%E5%9E%8B%E6%AF%94%E8%BE%83"><span class="toc-text">PHP类型比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE-PHP-%E5%B8%B8%E9%87%8F"><span class="toc-text">设置 PHP 常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-text">PHP字符串</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">三元运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%AA%E7%A9%BA%E8%88%B9%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-text">太空船运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-text">运算符优先级</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E5%87%BD%E6%95%B0"><span class="toc-text">PHP - 数组排序函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E8%B6%85%E7%BA%A7%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-text">PHP 超级全局变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PHP-%E5%87%BD%E6%95%B0"><span class="toc-text">PHP 函数</span></a></li></ol>
+    </div>
+  </div>
+</div>
+
+        </main>
+    </div>
+    <section id="rightside">
+    <div class="rightside-item">
+
+         
+        
+        
+            <a id="open-toc" title="Catalog">
+                <i class="fas fa-list-ul"></i>
+            </a>
+        
+
+
+         
+         
+        <a href="javascript:void(0);" id="darkmode" title="Dark/Light ">
+            <i class="fas fa-moon"></i>
+        </a>
+         
+
+
+        
+            <a href="#Direct comments" title="Direct comments">
+                <i class="fas fa-comments"></i>
+            </a>
+        
+
+
+        <a href="#" title="Back To Top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+</section>
+    
+
+<footer class="footer" id="footer">
+  <div class="copyright">
+    &copy; 2020 - 2023
+    <i class="fas fa-fan"></i>
+    Tim0
+  </div>
+  <div class="framework-info">
+    <span>Framework</span>
+    <a href="https://hexo.io" target="_blank">Hexo</a>
+    <span class="footer-separator">|</span>
+    <span>Theme </span>
+    <a href="https://github.com/lete114/hexo-theme-MengD" target="_blank">MengD.(萌典) </a>
+  </div>
+  <div class="custom-text">In case i don't see you,good morning,good afternoon and good night.</div>
+</footer>
+    <div id="mask" onclick="closeAll()"></div>
+    
+    <script src="/js/main.js"></script>
+    
+<script>
+  var originTitle = document.title;
+  var titleTime;
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      document.title = "(つェ⊂)  " + originTitle;
+      clearTimeout(titleTime);
+    } else {
+      document.title = "(*´∇｀*)  " + originTitle;
+      titleTime = setTimeout(function() {
+        document.title = originTitle;
+      }, 2000);
+    }
+  });
+</script>
+
+
+
+<script src="/js/lazyload.js"></script>
+
+
+
+
+<script>
+  function loadCardLink() {
+    cardLink.server = 'https://cardlink-server.deta.dev/?url='
+    cardLink(mengd.$queryAll('#post>.post-content a[target=_blank]'))
+  }
+  mengd.getScript('/third-party/js/cardlink.js', loadCardLink)
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  mengd.getScript('/third-party/js/prefetch-page.js', () => {
+    const requestIdleCa = requestIdleCallback
+    if (requestIdleCa) {
+      requestIdleCa(() => {
+        prefetch({"delay":1000,"threshold":25})
+      })
+    } else {
+      setTimeout(() => {
+        prefetch({"delay":1000,"threshold":25})
+      }, 3000);
+    }
+  })
+</script>
+
+</body>
+
+</html>
